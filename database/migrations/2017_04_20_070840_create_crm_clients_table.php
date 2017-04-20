@@ -14,8 +14,8 @@ class CreateCrmClientsTable extends Migration {
 	{
 		Schema::create('crm_clients', function(Blueprint $table)
 		{
+            $table->string('id', 36)->unique('id_UNIQUE');
 			$table->integer('count', true);
-			$table->string('id', 36)->unique('id_UNIQUE');
 			$table->enum('type', array('J','F'));
 			$table->string('name');
 			$table->timestamps();

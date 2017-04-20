@@ -14,8 +14,8 @@ class CreateCrmProjectsPersonsTypesConnectionsTable extends Migration {
 	{
 		Schema::create('crm_projects_persons_types_connections', function(Blueprint $table)
 		{
+            $table->string('id', 36)->unique('id');
 			$table->integer('count', true);
-			$table->string('id', 36)->unique('id');
 			$table->timestamps();
 			$table->timestamp('deleted-at')->nullable()->default(DB::raw('CURRENT_TIMESTAMP'));
 			$table->string('project_id', 36)->index('fk_crm_projects_persons_types_connections_crm_projects1_idx');

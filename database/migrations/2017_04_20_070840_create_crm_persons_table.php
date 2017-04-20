@@ -14,8 +14,8 @@ class CreateCrmPersonsTable extends Migration {
 	{
 		Schema::create('crm_persons', function(Blueprint $table)
 		{
+            $table->string('id', 36)->unique('id_UNIQUE');
 			$table->integer('count', true);
-			$table->string('id', 36)->unique('id_UNIQUE');
 			$table->timestamps();
 			$table->softDeletes()->default(DB::raw('CURRENT_TIMESTAMP'));
 			$table->string('name');

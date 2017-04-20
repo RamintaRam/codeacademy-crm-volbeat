@@ -14,8 +14,8 @@ class CreateCrmProjectsLoginsTable extends Migration {
 	{
 		Schema::create('crm_projects_logins', function(Blueprint $table)
 		{
+            $table->string('id', 36)->unique('id_UNIQUE');
 			$table->integer('count', true);
-			$table->string('id', 36)->unique('id_UNIQUE');
 			$table->timestamps();
 			$table->timestamp('deleted_at')->default(DB::raw('CURRENT_TIMESTAMP'));
 			$table->string('user_name')->unique('user_name_UNIQUE');

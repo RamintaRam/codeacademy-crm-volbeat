@@ -14,8 +14,8 @@ class CreateCrmClientsPositionsTable extends Migration {
 	{
 		Schema::create('crm_clients_positions', function(Blueprint $table)
 		{
-			$table->integer('count', true);
-			$table->string('id', 36)->unique('id_UNIQUE');
+            $table->string('id', 36)->unique('id_UNIQUE');
+            $table->integer('count', true);
 			$table->timestamps();
 			$table->timestamp('deleted_id')->nullable()->default(DB::raw('CURRENT_TIMESTAMP'));
 			$table->string('name');
