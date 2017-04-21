@@ -15,15 +15,12 @@ class CRMFakeDataController extends Controller
 
         for ($i = 0; $i < $count; $i++)
         {
-            $data[] = [
-                'id' => $faker->uuid,
+            CRMPersons::create([
                 'name' => $faker->name,
                 'email' => $faker->email,
                 'phone' => $faker->phoneNumber,
-            ];
-
+            ]);
         }
-        CRMPersons::insert($data);
     }
 
 }
