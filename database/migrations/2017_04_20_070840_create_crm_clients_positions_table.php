@@ -17,7 +17,7 @@ class CreateCrmClientsPositionsTable extends Migration {
             $table->string('id', 36)->unique('id_UNIQUE');
             $table->integer('count', true);
 			$table->timestamps();
-			$table->timestamp('deleted_id')->nullable()->default(DB::raw('CURRENT_TIMESTAMP'));
+			$table->timestamp('deleted_at')->nullable()->default(DB::raw('CURRENT_TIMESTAMP'));
 			$table->string('name');
 			$table->text('description', 65535);
 		});
