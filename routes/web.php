@@ -1,20 +1,13 @@
 <?php
 
 
-use App\models\CrmPersons;
+Route::get('/persons', [
 
-Route::get('/', function () {
+    'uses' => 'CRMPersonsController@index'
+]);
 
+Route::get('/generate-fake-data/persons/{count}', [
 
-    return CrmPersons::get();
-});
+    'uses' => 'CRMFakeDataController@generatePersons'
 
-Route::get('/new-person', function ()
-{
-    return CrmPersons::create([
-        'id' => \Ramsey\Uuid\Uuid::uuid4(),
-        'name' => 'Raminta',
-        'email' => 'Bingelyte',
-        'phone' => '86xxxxxxx'
-    ]);
-});
+]);
