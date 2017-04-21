@@ -2,13 +2,9 @@
 
 namespace App\models;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class CrmPersons extends Model
+class CRMPersons extends CoreModel
 {
-    use SoftDeletes;
-
     protected $table = 'crm_persons';
 
     protected $fillable = ['id', 'name', 'email', 'phone'];
