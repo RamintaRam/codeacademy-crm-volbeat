@@ -9,8 +9,8 @@ use Illuminate\Http\Request;
 
 class CRMFakeDataController extends Controller
 {
-    public function generatePersons(int $count = 50)
-    {
+    public function generatePersons(int $count = 10)
+
         $faker = Factory::create();
 
         for ($i = 0; $i < $count; $i++)
@@ -19,6 +19,19 @@ class CRMFakeDataController extends Controller
                 'name' => $faker->name,
                 'email' => $faker->email,
                 'phone' => $faker->phoneNumber,
+            ]);
+        }
+    }
+
+    public function generateClient(int $count = 10)
+    {
+        $faker = Factory::create();
+
+        for ($i = 0; $i < $count; $i++)
+        {
+            CRMPersons::create([
+                'name' => $faker->name,
+                'type' => $faker->type,
             ]);
         }
     }
