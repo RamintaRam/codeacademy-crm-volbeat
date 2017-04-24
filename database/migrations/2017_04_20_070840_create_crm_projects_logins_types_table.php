@@ -17,7 +17,7 @@ class CreateCrmProjectsLoginsTypesTable extends Migration {
             $table->string('id', 36)->unique('id_UNIQUE');
 			$table->integer('count', true);
 			$table->timestamps();
-			$table->softDeletes()->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->softDeletes();;
 			$table->string('name');
 			$table->text('description', 65535);
 		});

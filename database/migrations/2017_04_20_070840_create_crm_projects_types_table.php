@@ -15,9 +15,9 @@ class CreateCrmProjectsTypesTable extends Migration {
 		Schema::create('crm_projects_types', function(Blueprint $table)
 		{
 			$table->string('id', 36)->unique('id_UNIQUE');
-			$table->integer('count')->unique('count_UNIQUE');
+            $table->integer('count', true);
 			$table->timestamps();
-			$table->softDeletes()->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->softDeletes();
 			$table->string('name');
 			$table->text('description', 65535);
 		});

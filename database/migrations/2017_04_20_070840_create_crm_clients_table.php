@@ -19,7 +19,7 @@ class CreateCrmClientsTable extends Migration {
 			$table->enum('type', array('J','F'));
 			$table->string('name');
 			$table->timestamps();
-			$table->softDeletes()->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->softDeletes();
 		});
 	}
 

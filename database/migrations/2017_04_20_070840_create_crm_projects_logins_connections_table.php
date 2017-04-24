@@ -15,9 +15,9 @@ class CreateCrmProjectsLoginsConnectionsTable extends Migration {
 		Schema::create('crm_projects_logins_connections', function(Blueprint $table)
 		{
             $table->string('id', 36)->unique('id_UNIQUE');
-			$table->integer('count')->unique('count_UNIQUE');
+			$table->integer('count',  true);
 			$table->timestamps();
-			$table->softDeletes()->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->softDeletes();
 			$table->string('project_id', 36)->index('fk_crm_projects_logins_connections_crm_projects1_idx');
 			$table->string('login_id', 36)->index('fk_crm_projects_logins_connections_crm_projects_logins1_idx');
 		});
