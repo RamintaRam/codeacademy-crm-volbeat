@@ -3,7 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\models\CRMClients;
+use App\models\CRMClientsPersonsPositionsConnections;
+use App\models\CRMClientsPositions;
 use App\models\CRMPersons;
+use App\models\CRMProjects;
+use App\models\CRMProjectsLogins;
+use App\models\CRMProjectsLoginsConnections;
+use App\models\CRMProjectsLoginsTypes;
+use App\models\CRMProjectsTypes;
 use Faker\Factory;
 
 use Illuminate\Http\Request;
@@ -37,4 +44,110 @@ class CRMFakeDataController extends Controller
         }
     }
 
+    public function generateProjectsTypes(int $count = 10)
+    {
+        $faker = Factory::create();
+
+        for ($i = 0; $i < $count; $i++)
+        {
+            CRMProjectsTypes::create([
+                'name' => $faker->name,
+                'description' => $faker->text,
+            ]);
+        }
+    }
+
+    public function generateProjects(int $count = 10)
+    {
+        $faker = Factory::create();
+
+        for ($i = 0; $i < $count; $i++)
+        {
+            CRMProjects::create([
+                'name' => $faker->name,
+                'description' => $faker->text,
+                'client_id' => CRMClients::all()->random()->id,
+                'type_id' => CRMProjectsTypes::all()->random()->id,
+
+            ]);
+
+        }
+    }
+
+    public function generateClientsPositions(int $count = 10)
+    {
+        $faker = Factory::create();
+
+        for ($i = 0; $i < $count; $i++)
+        {
+            CRMClientsPositions::create([
+                'name' => $faker->name,
+                'description' => $faker->text,
+            ]);
+
+        }
+    }
+
+    public function generateProjectsLoginsTypes(int $count = 10)
+    {
+        $faker = Factory::create();
+
+        for ($i = 0; $i < $count; $i++)
+        {
+            CRMProjectsLoginsTypes::create([
+                'name' => $faker->name,
+                'description' => $faker->text,
+            ]);
+
+        }
+    }
+
+
+    public function generateProjectsLogins(int $count = 10)
+    {
+        $faker = Factory::create();
+
+        for ($i = 0; $i < $count; $i++)
+        {
+            CRMProjectsLogins::create([
+                'user_name' => $faker->userName,
+                'type_id' => CRMProjectsLoginsTypes::all()->random()->id,
+                'secret' => $faker->password,
+                'login_url' => $faker->url,
+            ]);
+
+        }
+    }
+
+
+    public function generateClientsPersonsPositionConnection(int $count = 10)
+    {
+        $faker = Factory::create();
+
+        for ($i = 0; $i < $count; $i++)
+        {
+            CRMClientsPersonsPositionsConnections::create([
+                'clients_id' => CRMClients::all()->random()->id,
+                'persons_id' => CRMPersons::all()->random()->id,
+                'position_id' => CRMClientsPositions::all()->random()->id,
+                'comment' => $faker->text,
+            ]);
+
+
+        }
+    }
+
+
+    public function generateProjectsLoginsConnection(int $count = 10)
+    {
+      //  $faker = Factory::create();
+
+        for ($i = 0; $i < $count; $i++)
+        {
+            CRMProjectsLoginsConnections::create([
+                'project_id' => CRMProjects::all()->random()->id,
+                'login_id' => CRMProjectsLogins::all()->random()->id,
+            ]);
+        }
+    }
 }

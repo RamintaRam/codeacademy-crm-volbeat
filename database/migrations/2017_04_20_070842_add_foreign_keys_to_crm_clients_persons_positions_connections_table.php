@@ -14,8 +14,8 @@ class AddForeignKeysToCrmClientsPersonsPositionsConnectionsTable extends Migrati
 	{
 		Schema::table('crm_clients_persons_positions_connections', function(Blueprint $table)
 		{
-			$table->foreign('position_id', 'fk_crm_clients_persons_positions_connections_crm_clients1')->references('id')->on('crm_clients')->onUpdate('NO ACTION')->onDelete('NO ACTION');
-			$table->foreign('clients_id', 'fk_crm_clients_persons_positions_connections_crm_clients_posi')->references('id')->on('crm_clients_positions')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+			$table->foreign('position_id', 'fk_crm_clients_persons_positions_connections_crm_clients1')->references('id')->on('crm_clients_positions')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+			$table->foreign('clients_id', 'fk_crm_clients_persons_positions_connections_crm_clients_posi')->references('id')->on('crm_clients')->onUpdate('NO ACTION')->onDelete('NO ACTION');
 			$table->foreign('persons_id', 'fk_crm_clients_persons_positions_connections_crm_persons1')->references('id')->on('crm_persons')->onUpdate('NO ACTION')->onDelete('NO ACTION');
 		});
 	}
