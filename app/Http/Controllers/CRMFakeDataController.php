@@ -10,6 +10,8 @@ use App\models\CRMProjects;
 use App\models\CRMProjectsLogins;
 use App\models\CRMProjectsLoginsConnections;
 use App\models\CRMProjectsLoginsTypes;
+use App\models\CRMProjectsPersonsTypes;
+use App\models\CRMProjectsPersonsTypesConnections;
 use App\models\CRMProjectsTypes;
 use Faker\Factory;
 
@@ -140,13 +142,40 @@ class CRMFakeDataController extends Controller
 
     public function generateProjectsLoginsConnection(int $count = 10)
     {
-      //  $faker = Factory::create();
 
         for ($i = 0; $i < $count; $i++)
         {
             CRMProjectsLoginsConnections::create([
                 'project_id' => CRMProjects::all()->random()->id,
                 'login_id' => CRMProjectsLogins::all()->random()->id,
+            ]);
+        }
+    }
+
+
+    public function generateProjectsPersonsTypes(int $count = 10)
+    {
+          $faker = Factory::create();
+
+        for ($i = 0; $i < $count; $i++)
+        {
+            CRMProjectsPersonsTypes::create([
+                'name' => $faker->name,
+                'description' => $faker->text,
+            ]);
+        }
+    }
+
+
+    public function generateProjectsPersonsTypesConnections(int $count = 10)
+    {
+
+        for ($i = 0; $i < $count; $i++)
+        {
+            CRMProjectsPersonsTypesConnections::create([
+                'project_id' => CRMProjects::all()->random()->id,
+                'person_id' => CRMPersons::all()->random()->id,
+                'type_id' => CRMProjectsPersonsTypes::all()->random()->id,
             ]);
         }
     }
