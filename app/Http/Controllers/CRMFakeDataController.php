@@ -122,7 +122,7 @@ class CRMFakeDataController extends Controller
     }
 
 
-    public function generateClientsPersonsPositionConnection(int $count = 10)
+    public function generateClientsPersonsPositionsConnections(int $count = 10)
     {
         $faker = Factory::create();
 
@@ -140,7 +140,7 @@ class CRMFakeDataController extends Controller
     }
 
 
-    public function generateProjectsLoginsConnection(int $count = 10)
+    public function generateProjectsLoginsConnections(int $count = 10)
     {
 
         for ($i = 0; $i < $count; $i++)

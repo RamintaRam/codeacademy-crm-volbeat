@@ -80,29 +80,29 @@ Route::get('/generate-fake-data/projectsLogins/{count}', [
 
 
 Route:: get('/clientsPersonsPositionsConnections', [
-    'uses' => 'CRMClientsPersonsPositionsConnections@index'
+    'uses' => 'CRMClientsPersonsPositionsConnectionsController@index'
 ]);
 
 Route::get('/generate-fake-data/clientsPersonsPositionsConnections/{count}', [
 
-    'uses' => 'CRMFakeDataController@generateClientsPersonsPositionConnection'
+    'uses' => 'CRMFakeDataController@generateClientsPersonsPositionsConnection'
 
 ]);
 
 
 Route:: get('/projectsLoginsConnections', [
-    'uses' => 'CRMProjectsLoginsConnections@index'
+    'uses' => 'CRMProjectsLoginsConnectionsController@index'
 ]);
 
 Route::get('/generate-fake-data/projectsLoginsConnections/{count}', [
 
-    'uses' => 'CRMFakeDataController@generateProjectsLoginsConnection'
+    'uses' => 'CRMFakeDataController@generateProjectsLoginsConnections'
 
 ]);
 
 
 Route:: get('/projectsPersonsTypes', [
-    'uses' => 'CRMProjectsPersonsTypes@index'
+    'uses' => 'CRMProjectsPersonsTypesController@index'
 ]);
 
 Route::get('/generate-fake-data/projectsPersonsTypes/{count}', [
@@ -113,7 +113,7 @@ Route::get('/generate-fake-data/projectsPersonsTypes/{count}', [
 
 
 Route:: get('/projectsPersonsTypesConnections', [
-    'uses' => 'CRMProjectsPersonsTypesConnections@index'
+    'uses' => 'CRMProjectsPersonsTypesConnectionsController@index'
 ]);
 
 Route::get('/generate-fake-data/projectsPersonsTypesConnections/{count}', [
@@ -121,5 +121,14 @@ Route::get('/generate-fake-data/projectsPersonsTypesConnections/{count}', [
     'uses' => 'CRMFakeDataController@generateProjectsPersonsTypesConnections'
 
 ]);
+
+
+
+
+
+
+
+
+
 
 
