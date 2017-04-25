@@ -17,6 +17,10 @@ use Faker\Factory;
 
 use Illuminate\Http\Request;
 
+/**
+ * Class CRMFakeDataController
+ * @package App\Http\Controllers
+ */
 class CRMFakeDataController extends Controller
 {
     public function generatePersons(int $count = 10)

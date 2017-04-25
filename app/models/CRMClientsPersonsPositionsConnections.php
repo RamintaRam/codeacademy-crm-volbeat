@@ -3,6 +3,10 @@
 namespace App\models;
 
 
+/**
+ * Class CRMClientsPersonsPositionsConnections
+ * @package App\models
+ */
 class CRMClientsPersonsPositionsConnections extends CoreModel
 {
     protected $table = 'crm_clients_persons_positions_connections';
