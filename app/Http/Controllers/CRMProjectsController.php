@@ -13,7 +13,7 @@ class CRMProjectsController extends Controller {
 	 */
 	public function index()
 	{
-        CRMProjects::get();
+        return CRMProjects::get();
 	}
 
 	/**
