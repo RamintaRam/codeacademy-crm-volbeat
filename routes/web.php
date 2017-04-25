@@ -1,8 +1,12 @@
 <?php
 
 
+use App\models\CRMClientsPersonsPositionsConnections;
+
 route::get('/', function ()
 {
+    return CRMClientsPersonsPositionsConnections::get();
+
     return view ('welcome');
 });
 
@@ -92,7 +96,7 @@ Route:: get('/clientsPersonsPositionsConnections', [
 
 Route::get('/generate-fake-data/clientsPersonsPositionsConnections/{count}', [
 
-    'uses' => 'CRMFakeDataController@generateClientsPersonsPositionsConnection'
+    'uses' => 'CRMFakeDataController@generateClientsPersonsPositionsConnections'
 
 ]);
 
