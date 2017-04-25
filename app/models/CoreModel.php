@@ -19,7 +19,9 @@ use Ramsey\Uuid\Uuid;
 class CoreModel extends Model
 {
     use SoftDeletes;
+
     public $incrementing = false;
+
     protected static function boot()
     {
         parent::boot();
