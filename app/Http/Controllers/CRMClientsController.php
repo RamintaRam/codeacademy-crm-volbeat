@@ -13,7 +13,15 @@ class CRMClientsController extends Controller {
 	 */
 	public function index()
 	{
-        return CRMClients::get();
+        CRMClients::get();
+
+        return CRMClients::with(['projects'])->get();
+        $configuration = [
+            "example" => "Sveiki",
+            "clients" => CRMClients::with(['projects'])->get()
+        ];
+
+        return view ('data', $configuration);
 	}
 
 	/**
