@@ -92,7 +92,7 @@ Route:: get('/clientsPersonsPositionsConnections', [
 
 Route::get('/generate-fake-data/clientsPersonsPositionsConnections/{count}', [
 
-    'uses' => 'CRMFakeDataController@generateClientsPersonsPositionsConnection'
+    'uses' => 'CRMFakeDataController@generateClientsPersonsPositionsConnections'
 
 ]);
 
