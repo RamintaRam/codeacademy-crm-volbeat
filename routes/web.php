@@ -2,14 +2,13 @@
 
 
 use App\models\CRMClientsPersonsPositionsConnections;
+use App\models\CRMProjectsLogins;
 
-route::get('/', function ()
-{
-    return CRMClientsPersonsPositionsConnections::get();
+route::get('/', function () {
+    return CRMProjectsLogins::get();
 
-    return view ('welcome');
+    return view('welcome');
 });
-
 
 
 Route::get('/persons', [
