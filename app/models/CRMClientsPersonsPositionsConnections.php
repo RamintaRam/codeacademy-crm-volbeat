@@ -12,6 +12,7 @@ class CRMClientsPersonsPositionsConnections extends CoreModel
     protected $table = 'crm_clients_persons_positions_connections';
 
     protected $fillable = ['id', 'clients_id', 'persons_id', 'position_id', 'comment'];
+<<<<<<< HEAD
 
     public function client ()
     {
@@ -23,4 +24,12 @@ class CRMClientsPersonsPositionsConnections extends CoreModel
         return $this->hasMany(CRMPersons::class, 'id', 'persons_id');
     }
 }
+=======
+>>>>>>> origin/master
 
+
+    public function people()
+    {
+        return $this->hasMany(CRMPersons::class, 'id', 'persons_id');
+    }
+}
