@@ -25,5 +25,4 @@ class CRMClients extends CoreModel
         return $this->hasMany(CRMClientsPersonsPositionsConnections::class, 'clients_id', 'id');
     }
 
-
 }
