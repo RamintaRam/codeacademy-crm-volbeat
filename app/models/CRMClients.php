@@ -12,22 +12,18 @@ class CRMClients extends CoreModel
 
     protected $fillable = ['id', 'name', 'type'];
 
+    //TODO move to CoreModel
     protected $hidden = ['count', 'created_at', 'updated_at', 'deleted_at'];
-    protected $appends = ['is_company'];
-    protected $with = ['projects', 'personal'];
 
-    public function projects ()
-{
-    return $this->hasMany(CRMProjects::class, 'client_id', 'id');
-}
+    public function projects()
+    {
+        return $this->hasMany(CRMProjects::class, 'client_id', 'id');
+    }
 
-    public function personal ()
+    public function personal()
     {
         return $this->hasMany(CRMClientsPersonsPositionsConnections::class, 'clients_id', 'id');
     }
 
-    public function getIsCompanyAttribute()
-    {
-        return $this->type == 'J';
-    }
+
 }
