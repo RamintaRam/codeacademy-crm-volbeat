@@ -1,6 +1,13 @@
 <?php
 
 
+route::get('/', function ()
+{
+    return view ('welcome');
+});
+
+
+
 Route::get('/persons', [
 
     'uses' => 'CRMPersonsController@index'
