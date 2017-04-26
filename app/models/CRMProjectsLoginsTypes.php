@@ -18,6 +18,6 @@ class CRMProjectsLoginsTypes extends CoreModel
      */
     public function projectLogin()
     {
-        return $this->hasOne(CRMProjectsLogins::class, 'type_id', 'id');
+        return $this->hasMany(CRMProjectsLogins::class, 'type_id', 'id');
     }
 }

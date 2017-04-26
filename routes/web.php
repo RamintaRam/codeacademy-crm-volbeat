@@ -1,13 +1,20 @@
 <?php
 
 
+use App\Http\Controllers\CRMProjectsLoginsConnectionsController;
 use App\models\CRMClientsPersonsPositionsConnections;
 use App\models\CRMProjectsLogins;
+use App\models\CRMProjectsLoginsTypes;
+use App\models\CRMProjectsPersonsTypes;
+use App\models\CRMProjectsPersonsTypesConnections;
+use App\models\CRMProjectsTypes;
+
 
 route::get('/', function () {
-    return CRMProjectsLogins::get();
+  //return CRMProjects::get();
 
-    return view('welcome');
+
+    return view('main');
 });
 
 

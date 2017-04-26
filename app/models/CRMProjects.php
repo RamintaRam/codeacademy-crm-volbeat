@@ -32,7 +32,7 @@ class CRMProjects extends CoreModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function projectPersonTypeConnection()
+    public function persons()
     {
         return $this->hasMany(CRMProjectsPersonsTypesConnections::class, 'project_id', 'id');
     }
@@ -40,8 +40,8 @@ class CRMProjects extends CoreModel
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function clients()
+    public function client()
     {
-        return $this->hasMany(CRMClients::class, 'id', 'client_id');
+        return $this->hasOne(CRMClients::class, 'id', 'client_id');
     }
 }
