@@ -14,7 +14,16 @@ class CRMProjectsController extends Controller
      */
     public function index()
     {
-        return CRMProjects::with(['projectType', 'projectLoginConnection', 'projectPersonTypeConnection', 'clients'])->get();
+        $configuration = [];
+
+
+        $configuration["projects"] = CRMProjects::with(['client', 'persons'])->get()->toArray();
+        $configuration["totalCount"] = sizeof($configuration['projects']);
+
+
+       // dd($configuration["projects"]);
+
+        return view('content.projects', $configuration);
     }
 
     /**
