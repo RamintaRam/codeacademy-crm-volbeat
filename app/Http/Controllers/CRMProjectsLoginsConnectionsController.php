@@ -14,7 +14,7 @@ class CRMProjectsLoginsConnectionsController extends Controller
      */
     public function index()
     {
-        return CRMProjectsLoginsConnectionsController::with(['projects', 'projectLogin'])->get();
+        return CRMProjectsLoginsConnectionsController::get();
     }
 
     /**
